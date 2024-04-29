@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:sample_of_dividing_widget_into_manageable_parts/refactor/widgets/friend_list_tile.dart';
+import 'package:sample_of_dividing_widget_into_manageable_parts/refactor/widgets/image_slider_view.dart';
+import 'package:sample_of_dividing_widget_into_manageable_parts/refactor/widgets/main_actions.dart';
 
 class RefactorScreen extends StatelessWidget {
   const RefactorScreen({super.key});
@@ -17,6 +20,9 @@ class RefactorScreen extends StatelessWidget {
           ),
         ),
       ],
+      imageSlider: const ImageSliderView(),
+      friendListTile: const FriendListTile(),
+      mainActions: const MainActions(),
     );
   }
 }
@@ -25,9 +31,17 @@ class _RefactorScreenLayout extends StatelessWidget {
   const _RefactorScreenLayout({
     required this.appBarTitle,
     required this.appBarActions,
+    required this.imageSlider,
+    required this.friendListTile,
+    required this.mainActions,
   });
+
   final String appBarTitle;
   final List<Widget> appBarActions;
+  final Widget imageSlider;
+  final Widget friendListTile;
+  final Widget mainActions;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,179 +63,16 @@ class _RefactorScreenLayout extends StatelessWidget {
           color: const Color(0xFF292E35),
           child: Column(
             children: [
-              Stack(
-                alignment: Alignment.bottomLeft,
-                children: [
-                  Image.asset('assets/animal2.jpg'),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.black),
-                      ),
-                      onPressed: () {},
-                      child: const Text(
-                        '支援者求む！→',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              const Gap(10),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: 4,
-                    width: 60,
-                    child: ColoredBox(color: Color(0xFFEAFF3E)),
-                  ),
-                  Gap(10),
-                  SizedBox(
-                    height: 4,
-                    width: 60,
-                    child: ColoredBox(color: Color(0xFF606B77)),
-                  ),
-                  Gap(10),
-                  SizedBox(
-                    height: 4,
-                    width: 60,
-                    child: ColoredBox(color: Color(0xFF606B77)),
-                  ),
-                  Gap(10),
-                  SizedBox(
-                    height: 4,
-                    width: 60,
-                    child: ColoredBox(color: Color(0xFF606B77)),
-                  ),
-                ],
-              ),
+              imageSlider,
               const Gap(20),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  child: ColoredBox(
-                    color: Color(0xFF606B77),
-                    child: Padding(
-                      padding: EdgeInsets.fromLTRB(8, 10, 8, 8),
-                      child: Row(
-                        children: [
-                          Text(
-                            'オフライン',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Spacer(),
-                          Text(
-                            'フレンドリスト',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: friendListTile,
               ),
               const Gap(20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(40)),
-                          child: ColoredBox(
-                            color: Colors.black,
-                            child: Padding(
-                              padding: const EdgeInsets.all(6.0),
-                              child: Icon(
-                                Icons.location_city,
-                                color: Colors.white,
-                                size: MediaQuery.sizeOf(context).width * 0.23,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Text(
-                          'ゲソタウン',
-                          style:
-                              Theme.of(context).textTheme.labelSmall?.copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(40)),
-                          child: ColoredBox(
-                            color: Colors.black,
-                            child: Padding(
-                              padding: const EdgeInsets.all(6.0),
-                              child: Icon(
-                                Icons.checkroom,
-                                color: Colors.white,
-                                size: MediaQuery.sizeOf(context).width * 0.23,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Text(
-                          'マイコーデ',
-                          style:
-                              Theme.of(context).textTheme.labelSmall?.copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(40)),
-                          child: ColoredBox(
-                            color: Colors.black,
-                            child: Padding(
-                              padding: const EdgeInsets.all(6.0),
-                              child: Icon(
-                                Icons.history_edu,
-                                color: Colors.white,
-                                size: MediaQuery.sizeOf(context).width * 0.23,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Text(
-                          'ヒストリー',
-                          style:
-                              Theme.of(context).textTheme.labelSmall?.copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                child: mainActions,
               ),
               const Gap(20),
               GridView.builder(
