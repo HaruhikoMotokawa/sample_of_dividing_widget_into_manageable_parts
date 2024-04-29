@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:sample_of_dividing_widget_into_manageable_parts/no_refactor/no_refactor_screen.dart';
 
 void main() {
   runApp(const App());
@@ -29,9 +31,16 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const NoRefactorScreen()),
+                );
+              },
               child: const Text('no_refactor'),
             ),
+            const Gap(50),
             ElevatedButton(
               onPressed: () {},
               child: const Text('refactor'),
