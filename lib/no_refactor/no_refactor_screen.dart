@@ -213,7 +213,7 @@ class NoRefactorScreen extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4),
-                  itemCount: miniIconConfigs.length,
+                  itemCount: _subActionItemConfigs.length,
                   itemBuilder: (context, index) {
                     return Column(
                       children: [
@@ -221,19 +221,19 @@ class NoRefactorScreen extends StatelessWidget {
                           borderRadius:
                               const BorderRadius.all(Radius.circular(30)),
                           child: ColoredBox(
-                            color: miniIconConfigs[index].backgroundColor,
+                            color: _subActionItemConfigs[index].backgroundColor,
                             child: Padding(
                               padding: const EdgeInsets.all(6.0),
                               child: Icon(
-                                miniIconConfigs[index].iconData,
-                                color: miniIconConfigs[index].iconColor,
+                                _subActionItemConfigs[index].iconData,
+                                color: _subActionItemConfigs[index].iconColor,
                                 size: MediaQuery.sizeOf(context).width * 0.15,
                               ),
                             ),
                           ),
                         ),
                         Text(
-                          miniIconConfigs[index].text,
+                          _subActionItemConfigs[index].text,
                           style:
                               Theme.of(context).textTheme.labelSmall?.copyWith(
                                     color: Colors.white,
@@ -251,8 +251,8 @@ class NoRefactorScreen extends StatelessWidget {
   }
 }
 
-class IconConfig {
-  IconConfig({
+class _SubActionItemConfig {
+  _SubActionItemConfig({
     required this.iconData,
     required this.iconColor,
     required this.backgroundColor,
@@ -264,98 +264,98 @@ class IconConfig {
   String text;
 }
 
-List<IconConfig> miniIconConfigs = [
-  IconConfig(
+List<_SubActionItemConfig> _subActionItemConfigs = [
+  _SubActionItemConfig(
     iconData: Icons.close,
     iconColor: Colors.black,
     backgroundColor: const Color(0xFF12CA91),
     text: 'Xランキング',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.festival,
     iconColor: Colors.black,
     backgroundColor: const Color(0xFFFF427B),
     text: 'イベントマッチ',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.pedal_bike,
     iconColor: Colors.black,
     backgroundColor: const Color(0xFFEA5358),
     text: 'ロブイチ',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.menu_book,
     iconColor: Colors.black,
     backgroundColor: const Color(0xFF5B39EB),
     text: 'カタログ',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.photo_library,
     iconColor: Colors.black,
     backgroundColor: const Color(0xFFEA8C4D),
     text: 'アルバム',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.shield,
     iconColor: Colors.black,
     backgroundColor: const Color(0xFFF5FF22),
     text: 'タイカイサポート',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.flutter_dash,
     iconColor: const Color(0xFFE8805F),
     backgroundColor: const Color(0xFFFAEEE8),
     text: 'サイドオーダー',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.key,
     iconColor: Colors.white,
     backgroundColor: const Color(0xFF9A49DF),
     text: 'ブキ',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.electric_bolt,
     iconColor: Colors.white,
     backgroundColor: const Color(0xFF9A49DF),
     text: 'ステージ',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.stars,
     iconColor: Colors.white,
     backgroundColor: const Color(0xFF9A49DF),
     text: 'フェス',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.phishing,
     iconColor: Colors.white,
     backgroundColor: const Color(0xFF9A49DF),
     text: 'バイト',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.smart_toy,
     iconColor: Colors.white,
     backgroundColor: const Color(0xFF9A49DF),
     text: 'ヒーローモード',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.play_circle,
     iconColor: Colors.white,
     backgroundColor: Colors.grey,
     text: 'メモリープレイヤー',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.screen_rotation_alt,
     iconColor: Colors.white,
     backgroundColor: Colors.grey,
     text: 'ヘヤタテ',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.qr_code_2,
     iconColor: Colors.white,
     backgroundColor: Colors.grey,
     text: 'QRコードリーダー',
   ),
-  IconConfig(
+  _SubActionItemConfig(
     iconData: Icons.settings,
     iconColor: Colors.white,
     backgroundColor: Colors.grey,
