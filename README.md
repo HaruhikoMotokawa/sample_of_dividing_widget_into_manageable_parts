@@ -1,16 +1,5 @@
 # sample_of_dividing_widget_into_manageable_parts
 
-A new Flutter project.
+このプロジェクトはQiitaの記事、**【Flutter】Widgetを管理しやすいように分割する**のサンプルプロジェクトです。
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+記事のリンク：https://qiita.com/Harx02663971/items/bac462e3822fb0ffa615
