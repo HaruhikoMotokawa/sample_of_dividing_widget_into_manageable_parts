@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sample_of_dividing_widget_into_manageable_parts/refactor/widgets/action_item.dart';
 
 class SubActions extends StatelessWidget {
   const SubActions({
@@ -14,30 +15,12 @@ class SubActions extends StatelessWidget {
             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
         itemCount: _subActionItemConfigs.length,
         itemBuilder: (context, index) {
-          return Column(
-            children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(30)),
-                child: ColoredBox(
-                  color: _subActionItemConfigs[index].backgroundColor,
-                  child: Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    child: Icon(
-                      _subActionItemConfigs[index].iconData,
-                      color: _subActionItemConfigs[index].iconColor,
-                      size: MediaQuery.sizeOf(context).width * 0.15,
-                    ),
-                  ),
-                ),
-              ),
-              Text(
-                _subActionItemConfigs[index].text,
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-            ],
+          return ActionItem(
+            iconData: _subActionItemConfigs[index].iconData,
+            iconColor: _subActionItemConfigs[index].iconColor,
+            iconWidthRatio: 0.15,
+            backgroundColor: _subActionItemConfigs[index].backgroundColor,
+            title: _subActionItemConfigs[index].text,
           );
         });
   }

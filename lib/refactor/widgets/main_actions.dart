@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sample_of_dividing_widget_into_manageable_parts/refactor/widgets/action_item.dart';
 
 class MainActions extends StatelessWidget {
   const MainActions({
@@ -7,58 +8,32 @@ class MainActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const iconColor = Colors.white;
+    const iconWidthRatio = 0.23;
+    const backgroundColor = Colors.black;
     return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _ActionItem(
-          icon: Icons.location_city,
+        ActionItem(
+          iconData: Icons.location_city,
+          iconColor: iconColor,
+          iconWidthRatio: iconWidthRatio,
+          backgroundColor: backgroundColor,
           title: 'ゲソタウン',
         ),
-        _ActionItem(
-          icon: Icons.checkroom,
+        ActionItem(
+          iconData: Icons.checkroom,
+          iconColor: iconColor,
+          iconWidthRatio: iconWidthRatio,
+          backgroundColor: backgroundColor,
           title: 'マイコーデ',
         ),
-        _ActionItem(
-          icon: Icons.history_edu,
+        ActionItem(
+          iconData: Icons.history_edu,
+          iconColor: iconColor,
+          iconWidthRatio: iconWidthRatio,
+          backgroundColor: backgroundColor,
           title: 'ヒストリー',
-        ),
-      ],
-    );
-  }
-}
-
-class _ActionItem extends StatelessWidget {
-  const _ActionItem({
-    required this.icon,
-    required this.title,
-  });
-
-  final IconData icon;
-  final String title;
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ClipRRect(
-          borderRadius: const BorderRadius.all(Radius.circular(40)),
-          child: ColoredBox(
-            color: Colors.black,
-            child: Padding(
-              padding: const EdgeInsets.all(6.0),
-              child: Icon(
-                icon,
-                color: Colors.white,
-                size: MediaQuery.sizeOf(context).width * 0.23,
-              ),
-            ),
-          ),
-        ),
-        Text(
-          title,
-          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
         ),
       ],
     );
